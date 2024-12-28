@@ -61,7 +61,18 @@
               </nav>
         </header>
         
-        @yield('conteudo')
+          <div class="class-conteiner-fluid">
+            @if (session('msg'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Atenção: </strong> {{session('msg')}}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+              
+            @endif
+            @yield('conteudo')
+                
+          </div>
+        
 
         <!-- CDN js do bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

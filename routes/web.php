@@ -14,6 +14,7 @@ Route::get('/', function(){
 //Rotas da minha classe Eventos
 Route::get('/events/list', [EventController::class, 'list']); 
 Route::get('/events/create', [EventController::class, 'create']); 
+Route::post('/events', [EventController::class, 'store']); 
 
 //Rotas da minha classe Contato
 Route::get('/contacts/list', [ContactController::class, 'list']); 
