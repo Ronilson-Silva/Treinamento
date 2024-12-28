@@ -23,6 +23,7 @@ Route::get('/contacts/create', [ContactController::class, 'create']);
 //Rotas da minha classe Produtos
 Route::get('/products/list', [ProductController::class, 'list']);
 Route::get('/products/create', [ProductController::class, 'create']);
+Route::post('/products', [ProductController::class, 'store']);
 
 
 

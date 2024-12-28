@@ -32,10 +32,10 @@
                         <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/events/list">Eventos</a>
+                        <a class="nav-link active" aria-current="page" href="/events/list">Listar Eventos</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/events/create">Criar Eventos</a>
+                        <a class="nav-link active" aria-current="page" href="/products/list">Listar Produtos</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/contacts/list">Listar Contatos</a>
@@ -43,12 +43,7 @@
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/contacts/create">Criar Contatos</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/products/list">Listar Produtos</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/products/create">Criar Produtos</a>
-                      </li>
+                     
                       <li class="nav-item">
                         <a class="nav-link" href="#">Entrar</a>
                       </li>

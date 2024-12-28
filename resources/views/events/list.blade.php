@@ -3,8 +3,15 @@
 @section('title','Criar Eventos')
     
 @section('conteudo')
-    <h1>Lista de Eventos</h1>
-    <table class="table table-dark table-hover">
+    <div class="row">
+        <div class="col-6">
+            <h3>Lista de Eventos</h3>
+        </div>
+        <div class="col-6">
+            <a href="/events/create" class="btn btn-primary btn-sm">Cadastrar Eventos</a>
+        </div>
+    </div>
+    <table class="table table-condensed table-dark table-hover">
         <thead>
         <tr>
             <th scope="col">Id</th>
