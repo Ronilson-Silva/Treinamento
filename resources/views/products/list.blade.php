@@ -32,7 +32,7 @@
         <tr>
             <th scope="row">{{$product->id}}</th>
             <td>{{$product->name}}</td>
-            <td>R$ {{number_format($product->price, 2, ',','.')}}</td>
+            <td> {{'R$ '.number_format($product->price, 2, ',','.')}}</td>
             <td>{{$product->description}}</td>
             <td>{{date('d/m/Y', strtotime($product->created_at))}}</td>
             <td><a href="{{$product->id}}" class="btn btn-success btn-sm">Atualizar</a></td>

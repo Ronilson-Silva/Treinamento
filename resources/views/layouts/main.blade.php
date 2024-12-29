@@ -41,10 +41,6 @@
                         <a class="nav-link active" aria-current="page" href="/contacts/list">Listar Contatos</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/contacts/create">Criar Contatos</a>
-                      </li>
-                     
-                      <li class="nav-item">
                         <a class="nav-link" href="#">Entrar</a>
                       </li>
                       <li class="nav-item">
