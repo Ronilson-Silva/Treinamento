@@ -6,8 +6,7 @@
         <title>@yield('title')</title>
         
         <!-- Fonts do Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="import">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/regular.css" integrity="sha512-M/FJqWoATldJm2aBKIM8rHWfz1SEOy3sMumogiYtbE2YIkMVf6uyaPeIKjMHalSsvvIUwlAiTS3AisqGPoEJYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- CDN do bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         

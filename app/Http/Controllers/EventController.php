@@ -8,9 +8,17 @@ class EventController extends Controller
 {
    public function index(){
      
-     $events = Event::all();
+      $search = request('search');
 
-        return view('events.list',['events'=>$events]);
+      if($search){
+
+         $events = Event::where([
+            ['title', 'like', '%'.$search.'%']
+         ])->get();
+         }else{
+            $events = Event::all();
+         }
+        return view('events.list',['events'=>$events, 'search'=>$search]);
    }
 
    public function create(){
@@ -23,9 +31,12 @@ class EventController extends Controller
       
       if($request->hasFile('image') && $request->file('image')->isValid()){
          $event->title = $request->title;
-         $event-> city= $request->city;
-         $event-> private= $request->private;
-         $event-> descripion= $request->descripion; 
+         $event->data = $request->data;
+         $event-> city = $request->city;
+         $event-> private = $request->private;
+         $event-> descripion = $request->descripion;
+         $event->itens = $request->itens; 
+
         //encapulu a imagem em uma variavel
          $requestImage = $request->image;
          //Com a função extension retiro a extensão do arquivo
@@ -43,14 +54,11 @@ class EventController extends Controller
       }else{
          return redirect('/events/list')->with('msg','Imagem não é valida.');
       }
-      
-      
-        
-     
-      
-      
-      
-
-
    }
+      public function show($id){
+         $event = Event::findOrFail($id);
+         return view('events.show',['event' => $event]);
+      }
+
+   
 }
