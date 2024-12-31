@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 class EventController extends Controller
 {
    public function index(){
@@ -56,9 +57,43 @@ class EventController extends Controller
       }
    }
       public function show($id){
+         
          $event = Event::findOrFail($id);
+
+         $eventOwne = User::where('id', $event->user_id)-first()->toArray();
+
          return view('events.show',['event' => $event]);
       }
 
+      public function destroy($id){
+         Event::findOrFail($id)->delete();
+         return redirect('events/list')->with('msg','Evento deletado com sucesso!!');
+      }
+
+      public function edit($id){
+         $event = Event::findOrFail($id);
+         return view('/events/edit',['event'=>$event]);
+
+      }
+
+      public function update(Request $request){
+         
+         $data = $request->all();
+         
+
+         //encapulu a imagem em uma variavel
+         $requestImage = $request->image;
+         //Com a função extension retiro a extensão do arquivo
+         $extension = $requestImage->extension();
+         //renomeio a imagem utilizando a função md5 e getClientOrinalName
+         $imageName = md5($requestImage->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+         //insiro no banco de dados o nome da imagem
+         $data['image']= $imageName;
+         //utilizando o metodo move() movo a imagem para pasta img do projeto
+         $requestImage->move(public_path('img'), $imageName);
+
+         Event::findOrFail($request->id)->update($data);
+         return redirect('events/list')->with('msg','Evento atualizado com sucesso!!');
+      }
    
 }

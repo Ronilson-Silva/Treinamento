@@ -16,6 +16,9 @@ Route::get('/events/list', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']); 
 Route::get('/events/{id}', [EventController::class, 'show']); 
 Route::post('/events', [EventController::class, 'store']); 
+Route::delete('/events/{id}',[EventController::class,'destroy']);
+Route::get('/events/edit/{id}',[EventController::class,'edit']);
+Route::put('/events/update/{id}',[EventController::class,'update']);
 
 //Rotas da minha classe Contato
 Route::get('/contacts/list', [ContactController::class, 'index']); 
@@ -32,3 +35,13 @@ Route::post('/products', [ProductController::class, 'store']);
 
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
